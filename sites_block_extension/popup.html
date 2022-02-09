@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <style>
+        .main {
+            height: 600px;
+        }
+
+        .text-center {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 0;
+            font-size: 32px;
+            background: -webkit-linear-gradient(#9f1500, #e3aa00);
+            background-clip: content-box;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .settings-form {
+            width: 340px;
+            margin: 10px auto;
+            font-size: 15px;
+        }
+
+        .settings-form form {
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .settings-form h2 {
+            margin: 0 0 15px;
+        }
+
+        .form-control,
+        .btn {
+            min-height: 38px;
+            border-radius: 2px;
+        }
+
+        .btn {
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="main">
+<div class="firstScreen">
+    <div>
+        <h2 class="text-center">Site Blocker</h2>
+    </div>
+    <div class="settings-form">
+        <form>
+            <div class="form-group">
+                <label for="fromtime">From Time</label>
+                <input type="text" id="fromtime" name="fromtime" class="form-control" placeholder="8 am">
+            </div>
+            <div class="form-group">
+                <label for="totime">To Time</label>
+                <input type="text" id="totime" name="totime" class="form-control" placeholder="8 pm">
+            </div>
+            <div class="form-group">
+                <label for="urltoredirect">Url to redirect</label>
+                <input type="text" id="urltoredirect" name="urltoredirect" class="form-control"
+                       placeholder="URL to redirect"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="urltoblcok">Urls to block</label>
+                <textarea rows="10" cols="32" id="urltoblcok" name="urltoblcok"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary btn-block" id="loginButton">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
