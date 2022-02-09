@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+
+	<style>
+		.secondScreen {
+			display: none;
+		}
+		.versionScreen {
+			display: none;
+		}
+		.text-center {
+			padding-top: 20px;
+			font-size: 42px;
+			background: -webkit-linear-gradient(#09009f, #32c286);
+			background-clip: content-box;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.version {
+			padding-left: 5px;
+			padding-bottom: 5px;
+		}
+		.version-form {
+			text-align: center;
+			padding: 20px;
+			width: 340px;
+			margin: 20px auto;
+			font-size: 15px;
+			margin-bottom: 25px;
+		}
+		.version-text-center {
+			padding-top: 10px;
+			font-size: 32px;
+			background: -webkit-linear-gradient(#9f0008, #61266d);
+			background-clip: content-box;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		.work-form {
+			width: 340px;
+			margin: 20px auto;
+			font-size: 15px;
+			margin-bottom: 5px;
+			background: #f7f7f7;
+			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+			padding: 30px;
+		}
+
+		.login-form {
+			width: 340px;
+			margin: 20px auto;
+			font-size: 15px;
+		}
+
+		.login-form form {
+			margin-bottom: 15px;
+			background: #f7f7f7;
+			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+			padding: 30px;
+		}
+
+		.login-form h2 {
+			margin: 0 0 15px;
+		}
+
+		.form-control,
+		.btn {
+			min-height: 38px;
+			border-radius: 2px;
+		}
+
+		.btn {
+			font-size: 15px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="firstScreen">
+		<div>
+			<h2 class="text-center">Work Report</h2>
+		</div>
+		<div class="login-form">
+			<form>
+				<div class="form-group">
+					<input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+				</div>
+				<div class="form-group">
+					<input type="password" id="password" name="password" class="form-control" placeholder="Password"
+						required>
+				</div>
+				<div class="alert alert-danger" id="loginFailed" role="alert" hidden="true">
+					Login failed!
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-primary btn-block" id="loginButton">Log in</button>
+				</div>
+			</form>
+		</div>
+		<div class="version"></div>
+	</div>
+
+	<div class="secondScreen">
+		<div>
+			<h2 class="text-center">Work Report</h2>
+		</div>
+		<div class="work-form">
+			<button type="button" class="btn btn-success btn-block" id="startWork" disabled>Start work</button>
+			<button type="button" class="btn btn-danger btn-block" id="finishWork" disabled>Finish work</button>
+		</div>
+		<div class="version"></div>
+	</div>
+
+	<div class="versionScreen">
+		<div class="version-form">
+				<h3 class="version-text-center">New version available</h3>
+				<button type="button" id="downloadUpdate" class="btn btn-warning">Download</button>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+<script type="text/javascript" src="run.js"></script>
+
+</html>

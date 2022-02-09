@@ -1,0 +1,46 @@
+{
+	"manifest_version": 2,
+	"name": "Work Report Extension",
+	"description": "This extension logs user work time on a Chrome browser",
+	"version": "1.0",
+	"icons": {
+		"128": "128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*/*"
+			],
+			"js": [
+				"jquery.min.js",
+				"timeme.min.js",
+				"contentscript.js"
+			]
+		}
+	],
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"http://*/*",
+		"https://*/*",
+		"idle",
+		"identity",
+		"identity.email",
+		"clipboardRead",
+		"clipboardWrite"
+	],
+	"background": {
+		"scripts": [
+			"background.js"
+		],
+		"persistent": false
+	},
+	"web_accessible_resources": [
+		"config.json"
+	],
+	"browser_action": {
+		"default_title": "Work Report Extension",
+		"default_icon": "128.png",
+		"default_popup": "popup.html"
+	}
+}
