@@ -8,3 +8,4 @@ Different chrome extensions for pet projects
 | `WRS`   | Extenstion for Work Report System     |soon...|
 | `sites_block_extension`   | Extenstion for blocking sites     |soon...|
 | `wp_copy_urls`   | Wordpress copy URLs     |soon...|
+| `bulk_link_opener`   | Bulk link opening     |soon...|
