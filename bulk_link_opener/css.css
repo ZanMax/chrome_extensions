@@ -1,3 +1,22 @@
-.main { 
-    width: 500px; height: 600px; background: #e9e9e7;padding: 15px;padding-right: 20px; float: left;
+
+.container {
+    width: 600px;
+    height: 550px;
+}
+
+
+.urls-list-block {
+    padding: 15px;
+}
+
+.file-upload {
+    float: left;
+}
+
+.open-urls-button {
+    float: right;
+}
+
+.github-url {
+    float: right;
 }

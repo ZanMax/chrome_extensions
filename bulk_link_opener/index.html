@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>URL OPEN</title>
+    <link href="bootstrap.min.css" rel="stylesheet"/>
+    <link href="css.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 urls-list-block">
+            <label for="data-form">List of URLS</label><span class="github-url"><a href="#">GitHub</a></span>
+            <textarea id="data-form" class="form-control urls-list" rows="20"
+                      placeholder="Paste some urls ..."></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group file-upload">
+                <label for="fileUpload">File with urls</label>
+                <input type="file" class="form-control-file" id="fileUpload">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-white btn-success open-urls-button" id="set_data">
+                Open all urls
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="functions.js"></script>
+</html>
