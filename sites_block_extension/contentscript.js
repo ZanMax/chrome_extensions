@@ -5,15 +5,35 @@
 let url = window.location.href;
 let domain = new URL(url).hostname.replace('www.', '');
 
+let time_start_block = '08'
+let time_stop_block = '23'
+
+let today = new Date();
+
 
 window.onload = function () {
-    chrome.runtime.sendMessage({
-        text: "currentUrl",
-        tabURL: domain,
-    }, (response) => {
-        if (response.block) {
-            window.location.href = "https://www.apilab.cc/block.html";
+    chrome.storage.local.get(["SiteBlockerSettings"], function (settingsRAW) {
+        let settingsStringify = JSON.stringify(settingsRAW);
+        let settingsJSON = JSON.parse(settingsStringify);
+        let data = settingsJSON.SiteBlockerSettings;
+        let settingsData = JSON.parse(data);
+
+        if (settingsRAW) {
+            let fromTime = settingsData.fromTime;
+            let toTime = settingsData.toTime;
+            let URLtoRedirect = settingsData.URLtoRedirect;
+            let URLStoBlock = settingsData.URLStoBlockArray;
+            if (today.getHours() > parseInt(time_start_block) && today.getHours() < parseInt(time_stop_block)) {
+                if (URLStoBlock.includes(domain)) {
+                    if (URLtoRedirect.startsWith('http')) {
+                        window.location.href = URLtoRedirect;
+                    } else {
+                        window.location.href = "https://" + URLtoRedirect;
+                    }
+                }
+            }
+        } else {
+            console.log('No settings')
         }
     });
 }
-
