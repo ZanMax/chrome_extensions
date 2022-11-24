@@ -9,7 +9,7 @@ let time_start_block = '08'
 let time_stop_block = '23'
 
 let today = new Date();
-
+let CurrentTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 window.onload = function () {
     chrome.storage.local.get(["SiteBlockerSettings"], function (settingsRAW) {
@@ -23,7 +23,7 @@ window.onload = function () {
             let toTime = settingsData.toTime;
             let URLtoRedirect = settingsData.URLtoRedirect;
             let URLStoBlock = settingsData.URLStoBlockArray;
-            if (today.getHours() > parseInt(time_start_block) && today.getHours() < parseInt(time_stop_block)) {
+            if (CurrentTime > fromTime && CurrentTime < toTime) {
                 if (URLStoBlock.includes(domain)) {
                     if (URLtoRedirect.startsWith('http')) {
                         window.location.href = URLtoRedirect;
