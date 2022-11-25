@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     chrome.storage.local.get(["SiteBlockerSettings"], function (settingsRAW) {
-        let settingsStringify = JSON.stringify(settingsRAW);
-        let settingsJSON = JSON.parse(settingsStringify);
-        let data = settingsJSON.SiteBlockerSettings;
-        let settingsData = JSON.parse(data);
-
         if (settingsRAW) {
-            let settings = settingsData;
-            document.getElementById("fromTime").value = settings.fromTime;
-            document.getElementById("toTime").value = settings.toTime;
-            document.getElementById("URLtoRedirect").value = settings.URLtoRedirect;
-            document.getElementById("URLStoBlock").value = settings.URLStoBlockArray.join("\n");
+            let settingsStringify = JSON.stringify(settingsRAW);
+            let settingsJSON = JSON.parse(settingsStringify);
+            let data = settingsJSON.SiteBlockerSettings;
+            if (data) {
+                let settings = JSON.parse(data);
+                document.getElementById("fromTime").value = settings.fromTime;
+                document.getElementById("toTime").value = settings.toTime;
+                document.getElementById("URLtoRedirect").value = settings.URLtoRedirect;
+                document.getElementById("URLStoBlock").value = settings.URLStoBlockArray.join("\n");
+            }
         } else {
             console.log('No settings')
         }

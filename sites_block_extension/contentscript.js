@@ -16,24 +16,25 @@ window.onload = function () {
         let settingsStringify = JSON.stringify(settingsRAW);
         let settingsJSON = JSON.parse(settingsStringify);
         let data = settingsJSON.SiteBlockerSettings;
-        let settingsData = JSON.parse(data);
-
-        if (settingsRAW) {
-            let fromTime = settingsData.fromTime;
-            let toTime = settingsData.toTime;
-            let URLtoRedirect = settingsData.URLtoRedirect;
-            let URLStoBlock = settingsData.URLStoBlockArray;
-            if (CurrentTime > fromTime && CurrentTime < toTime) {
-                if (URLStoBlock.includes(domain)) {
-                    if (URLtoRedirect.startsWith('http')) {
-                        window.location.href = URLtoRedirect;
-                    } else {
-                        window.location.href = "https://" + URLtoRedirect;
+        if (data) {
+            let settingsData = JSON.parse(data);
+            if (settingsRAW) {
+                let fromTime = settingsData.fromTime;
+                let toTime = settingsData.toTime;
+                let URLtoRedirect = settingsData.URLtoRedirect;
+                let URLStoBlock = settingsData.URLStoBlockArray;
+                if (CurrentTime > fromTime && CurrentTime < toTime) {
+                    if (URLStoBlock.includes(domain)) {
+                        if (URLtoRedirect.startsWith('http')) {
+                            window.location.href = URLtoRedirect;
+                        } else {
+                            window.location.href = "https://" + URLtoRedirect;
+                        }
                     }
                 }
+            } else {
+                console.log('No settings')
             }
-        } else {
-            console.log('No settings')
         }
     });
 }
